@@ -1,9 +1,19 @@
-.header {
+header {
+    background: #313131;
+}
+
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+.header-logo {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 .header-nav {
@@ -17,12 +27,35 @@
 }
 
 .header-nav-item a {
+    font-size: 1.5rem;
+    font-weight: 600;
     color: #fff;
     text-decoration: none;
 }
 
 .btn {
-    padding: 5px 20px;
+    padding: 15px 40px;
     border-radius: 20px;
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+@media (max-width:1280px){
+    .header-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;  
+    }
+}
+
+@media (max-width:600px){
+    
+    .header-nav {
+        justify-content: center;
+        align-items: center;
+    }
+    .btn {
+        display: none;
+    }
 }
 
