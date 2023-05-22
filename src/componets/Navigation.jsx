@@ -10,7 +10,7 @@ const Navigation = () => {
               <li className="header-nav-item"><a href="#">About</a></li>
               <li className="header-nav-item"><a href="#">Contact</a></li>
           </ul>
-          <button className="btn">Login</button>      
+          <button className="btn"><a href="#">Login</a></button>      
       </nav>
     </header>
   )

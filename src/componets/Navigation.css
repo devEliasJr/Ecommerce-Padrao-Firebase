@@ -40,6 +40,11 @@ header {
     font-weight: bold;
 }
 
+.btn a {
+    text-decoration: none;
+    color: #313131;
+}
+
 @media (max-width:1280px){
     .header-container {
         flex-wrap: wrap;
