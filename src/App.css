@@ -1,6 +1,16 @@
+:root {
+    --low-gray: #8c8c8c;
+    --medium-gray: #2a2a2a;
+    --high-gray: #121212;
+    --bg-color: #000000;
+    --white-color: #fff;
+    --btn-color: #404040;
+    --btn-color-hover: #212121;
+}
+
 body {
-    background: #121212;
-    color: #fff;
+    background: var(--bg-color);
+    color: var(--white-color);
     padding: 0;
     margin: 0;
 }
