@@ -1,3 +1,13 @@
+:root {
+    --low-gray: #8c8c8c;
+    --medium-gray: #2a2a2a;
+    --high-gray: #121212;
+    --bg-color: #000000;
+    --white-color: #fff;
+    --btn-color: #404040;
+    --btn-color-hover: #212121;
+}
+
 .container-grid {
     display: grid;
     grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
@@ -10,11 +20,11 @@
     display: flex;
     flex-direction: column;
     min-height: fit-content;
-    border: 2pt solid #313131;
+    border: 2pt solid var(--medium-gray);
     border-radius: 6px;
     overflow: hidden;
     margin: 0 auto;
-    background: #313131;
+    background: var(--medium-gray);
     padding-bottom: 20px;
     position: relative;
     box-shadow: 10px 10px 38px -15px rgba(46, 46, 46, 0.75);
@@ -51,14 +61,14 @@
     width: 100%;
     position: absolute;
     bottom: 0;
-    background: #656565;
-    color: #fff;
+    background: var(--btn-color);
+    color: var(--white-color);
     outline: none;
     border: none;
 }
 
 .product-container-btn:hover {
-    background: #212121;
+    background: var(--btn-color-hover);
     cursor: pointer;
 }
 

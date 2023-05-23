@@ -1,5 +1,15 @@
+:root {
+    --low-gray: #8c8c8c;
+    --medium-gray: #2a2a2a;
+    --high-gray: #121212;
+    --bg-color: #000000;
+    --white-color: #fff;
+    --btn-color: #404040;
+    --btn-color-hover: #212121;
+}
+
 header {
-    background: #313131;
+    background: var(--medium-gray);
 }
 
 .header-container {
@@ -14,6 +24,13 @@ header {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
     font-weight: 800;
+    transition: ease .2s;
+}
+
+.header-logo:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    text-shadow: 0px 2px 6px var(--low-gray);
 }
 
 .header-nav {
@@ -29,20 +46,34 @@ header {
 .header-nav-item a {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--low-gray);
     text-decoration: none;
+    transition: ease-in .2s;
+    padding: 10px 20px;
+
+}
+
+.header-nav-item a:hover {
+    color: var(--white-color);
 }
 
 .btn {
     padding: 15px 40px;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size: 1.125rem;
     font-weight: bold;
+    border: none;
+    background: var(--btn-color);
+
 }
 
 .btn a {
     text-decoration: none;
-    color: #313131;
+    color: var(--white-color);
+}
+
+.btn:hover {
+    background: var(--btn-color-hover);
 }
 
 @media (max-width:1280px){
