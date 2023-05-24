@@ -8,16 +8,6 @@
     --btn-color-hover: #212121;
 }
 
-.load-message {
-    font-size: 1.125rem;
-    word-wrap:break-word;
-    text-align: center;
-    height: 100vh;
-    padding-top: 20%;
-    color: var(--low-gray);
-
-}
-
 .container-grid {
     display: grid;
     grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);

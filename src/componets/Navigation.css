@@ -48,34 +48,18 @@ header {
     font-weight: 600;
     color: var(--low-gray);
     text-decoration: none;
-    transition: ease-in .2s;
-    padding: 10px 20px;
 }
 
-.nav-link {
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.header-nav-item a:hover {
-    color: var(--white-color);
-}
-
-
-.btn-link {
-    font-size: 1.5rem;
+.btn {
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-size: 1.125rem;
     font-weight: bold;
-    border-radius: 12px;
-    border: none;
-    background: var(--btn-color);
-    text-decoration: none;
-    color: var(--white-color);
-    padding: 15px 25px;
-    cursor: pointer;
 }
 
-.btn-link:hover {
-    background: var(--btn-color-hover);
+.btn a {
+    text-decoration: none;
+    color: #313131;
 }
 
 @media (max-width:1280px){
