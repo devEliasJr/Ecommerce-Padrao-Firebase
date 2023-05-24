@@ -25,7 +25,7 @@ export const useFetch = (url) => {
         setData(json);
 
       } catch (error) {
-        setError("Dados não encontrados, tente novamente mais tarde!");
+        setError(<p className="load-message">Dados não encontrados, tente novamente mais tarde!</p>);
 
       }
       setLoading(false);

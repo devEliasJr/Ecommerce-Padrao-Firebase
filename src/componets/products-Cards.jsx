@@ -1,7 +1,10 @@
+// Router Dom 
+import { useParams, Link } from "react-router-dom";
+
 // Style - CSS
 import './products-Cards.css'
 
-//set url
+//Set url
 const url = "http://localhost:3000/products";
 
 //Custom Hook
@@ -15,7 +18,7 @@ export default function ProductsCards() {
 
   return (
     <>
-      {loading && <p>Aguarde o Carregamento dos dados</p>}
+      {loading && <p className="load-message">Aguarde o Carregamento dos dados!</p>}
       {!error && (
         <div className='container-grid'>
           {items &&
@@ -25,7 +28,9 @@ export default function ProductsCards() {
                 <img src="https://placehold.co/400x400" />
                 <p className='product-container-description'>{product.description}</p>
                 <p className='product-container-price'>R$:{product.price}</p>
-                <button className='product-container-btn'>Saiba Mais</button>
+                <Link className='product-container-btn' to={`/product-description/${product.id}/${product.name}`}>
+                  <span className='product-container-btn-txt'>Saiba Mais ...</span> 
+                </Link>
               </div>
             ))}
         </div>

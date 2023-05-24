@@ -41,21 +41,6 @@
       "description": "",
       "price": 7.5,
       "category_id": 2
-    },
-    {
-      "name": "teste",
-      "price": "25",
-      "id": 7
-    },
-    {
-      "name": [],
-      "price": [],
-      "id": 8
-    },
-    {
-      "name": [],
-      "price": [],
-      "id": 9
     }
   ],
   "category": [

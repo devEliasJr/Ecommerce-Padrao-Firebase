@@ -50,29 +50,31 @@ header {
     text-decoration: none;
     transition: ease-in .2s;
     padding: 10px 20px;
+}
 
+.nav-link {
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 .header-nav-item a:hover {
     color: var(--white-color);
 }
 
-.btn {
-    padding: 15px 40px;
-    border-radius: 8px;
-    font-size: 1.125rem;
+
+.btn-link {
+    font-size: 1.5rem;
     font-weight: bold;
+    border-radius: 12px;
     border: none;
     background: var(--btn-color);
-
-}
-
-.btn a {
     text-decoration: none;
     color: var(--white-color);
+    padding: 15px 25px;
+    cursor: pointer;
 }
 
-.btn:hover {
+.btn-link:hover {
     background: var(--btn-color-hover);
 }
 
@@ -84,11 +86,10 @@ header {
     }
 }
 
-@media (max-width:600px){
+@media (max-width:680px){
     
     .header-nav {
-        justify-content: center;
-        align-items: center;
+        display: none;
     }
     .btn {
         display: none;

@@ -8,6 +8,16 @@
     --btn-color-hover: #212121;
 }
 
+.load-message {
+    font-size: 1.125rem;
+    word-wrap:break-word;
+    text-align: center;
+    height: 100vh;
+    padding-top: 20%;
+    color: var(--low-gray);
+
+}
+
 .container-grid {
     display: grid;
     grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
@@ -57,6 +67,9 @@
 }
 
 .product-container-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
     width: 100%;
     position: absolute;
@@ -65,6 +78,11 @@
     color: var(--white-color);
     outline: none;
     border: none;
+    text-decoration: none;
+}
+
+.product-container-btn-txt {
+    font-size: 1.125rem;
 }
 
 .product-container-btn:hover {
