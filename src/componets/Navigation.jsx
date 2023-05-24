@@ -1,16 +1,21 @@
+//React Icons
+import { FaCloudsmith, FaUserAlt } from "react-icons/fa";
+import { AiOutlineMenu } from "react-icons/ai";
+
 // Router Dom
 import { NavLink } from "react-router-dom";
 
 // Style - CSS
 import "./Navigation.css";
-import { useState } from 'react';
+import { useState } from "react";
 
 const Navigation = () => {
-
   return (
     <header>
       <nav className="header-container">
-        <h2 className="header-logo">logo</h2>
+        <h2 className="header-logo">
+          <FaCloudsmith /> logo
+        </h2>
         <ul className="header-nav">
           <li className="header-nav-item">
             <NavLink className="nav-link" to="/">
@@ -28,13 +33,10 @@ const Navigation = () => {
             </NavLink>
           </li>
         </ul>
-          <NavLink className="btn btn-link" to="/product-register">
-            Login
-          </NavLink>
-          <div>
-          </div>
-          
-          </nav>
+        <div className="header-login">
+          <FaUserAlt /> Login
+        </div>
+      </nav>
     </header>
   );
 };

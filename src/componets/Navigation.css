@@ -50,16 +50,24 @@ header {
     text-decoration: none;
 }
 
-.btn {
-    padding: 15px 40px;
-    border-radius: 20px;
-    font-size: 1.125rem;
-    font-weight: bold;
+.header-nav-item a:hover { 
+    color: var(--white-color);
 }
 
-.btn a {
-    text-decoration: none;
-    color: #313131;
+.header-login {
+    display: flex;
+    font-size: 1.2rem;
+    padding: 8px 10px;
+    border: 2px solid var(--white-color);
+    border-radius: 6px;
+    gap: 10px;
+    transition: ease .5s;
+}
+
+.header-login:hover {
+    background: var(--white-color);
+    color: var(--btn-color-hover);
+    cursor: pointer;
 }
 
 @media (max-width:1280px){
