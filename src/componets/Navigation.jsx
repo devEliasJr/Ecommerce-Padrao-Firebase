@@ -1,5 +1,5 @@
 //React Icons
-import { FaCloudsmith, FaUserAlt } from "react-icons/fa";
+import { FaCloudsmith, FaUserAlt, FaWindowClose } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 
 // Router Dom
@@ -7,36 +7,60 @@ import { NavLink } from "react-router-dom";
 
 // Style - CSS
 import "./Navigation.css";
-import { useState } from "react";
+
+//Hooks
+import { useEffect, useState } from "react";
 
 const Navigation = () => {
+  const [mobmenu, setmobMenu] = useState("");
+
   return (
     <header>
-      <nav className="header-container">
-        <h2 className="header-logo">
+      <div className="header-container">
+        <div className="header-logo">
           <FaCloudsmith /> logo
-        </h2>
-        <ul className="header-nav">
-          <li className="header-nav-item">
-            <NavLink className="nav-link" to="/">
-              Home
-            </NavLink>
-          </li>
-          <li className="header-nav-item">
-            <NavLink className="nav-link" to="/">
-              About
-            </NavLink>
-          </li>
-          <li className="header-nav-item">
-            <NavLink className="nav-link" to="/">
-              Contact
-            </NavLink>
-          </li>
-        </ul>
-        <div className="header-login">
+        </div>
+        {true && (
+          <nav className="nav-container">
+            <ul className="header-nav" style={{ display: mobmenu }}>
+              <li className="header-nav-item">
+                <NavLink className="nav-link" to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li className="header-nav-item">
+                <NavLink className="nav-link" to="/">
+                  About
+                </NavLink>
+              </li>
+              <li className="header-nav-item">
+                <NavLink className="nav-link" to="/">
+                  Contact
+                </NavLink>
+              </li>
+            </ul>
+            {mobmenu === "flex" && (
+              <i
+                className="close-icon"
+                onClick={() => {
+                  setmobMenu("");
+                }}>
+                <FaWindowClose />
+              </i>
+            )}
+          </nav>
+        )}
+        <div className="header-login" onClick={() => {}}>
           <FaUserAlt /> Login
         </div>
-      </nav>
+        <div
+          className="header-menu-mob"
+          onClick={() => {
+            setmobMenu("flex");
+          }}>
+          <AiOutlineMenu />
+        </div>
+      </div>
     </header>
   );
 };
