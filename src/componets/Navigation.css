@@ -74,10 +74,18 @@ header {
   transition: ease 0.5s;
 }
 
+.header-login a {
+  color: var(--white-color);
+  text-decoration: none;
+}
+
 .header-login:hover {
   background: var(--white-color);
-  color: var(--btn-color-hover);
   cursor: pointer;
+}
+
+.header-login:hover a {
+  color: var(--medium-gray);
 }
 
 .header-menu-mob {

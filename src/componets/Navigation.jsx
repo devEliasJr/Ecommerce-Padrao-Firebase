@@ -44,20 +44,24 @@ const Navigation = () => {
                 className="close-icon"
                 onClick={() => {
                   setmobMenu("");
-                }}>
+                }}
+              >
                 <FaWindowClose />
               </i>
             )}
           </nav>
         )}
         <div className="header-login" onClick={() => {}}>
-          <FaUserAlt /> Login
+          <NavLink  to="/login">
+            <FaUserAlt /> Login
+          </NavLink>
         </div>
         <div
           className="header-menu-mob"
           onClick={() => {
             setmobMenu("flex");
-          }}>
+          }}
+        >
           <AiOutlineMenu />
         </div>
       </div>
