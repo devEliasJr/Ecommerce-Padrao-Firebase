@@ -1,11 +1,10 @@
 {
   "products": [
     {
-      "id": 1,
       "name": "Hambúrguer",
-      "description": "Pão, bife de hambúrguer 90g, salada e batata.",
       "price": 8.5,
-      "category_id": 1
+      "description": "Pão, bife de hambúrguer 90g, salada e batata.",
+      "id": 1
     },
     {
       "id": 2,
@@ -15,11 +14,10 @@
       "category_id": 1
     },
     {
-      "id": 3,
       "name": "X-Bacon",
-      "description": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, 2 fatia de bacon, salada e batata.",
       "price": 12.5,
-      "category_id": 1
+      "description": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, 2 fatia de bacon, salada e batata.",
+      "id": 3
     },
     {
       "id": 4,
@@ -29,18 +27,22 @@
       "category_id": 1
     },
     {
-      "id": 5,
       "name": "Coca cola 350ml",
-      "description": "",
       "price": 5.5,
-      "category_id": 2
+      "description": "Lata 350 ml",
+      "id": 5
     },
     {
-      "id": 6,
       "name": "Coca cola 600ml",
-      "description": "",
       "price": 7.5,
-      "category_id": 2
+      "description": "Garrafa 600 ml",
+      "id": 6
+    },
+    {
+      "name": "Guaraná Antartica 1l",
+      "price": "7",
+      "description": "Garrafa retornável de 1 litro",
+      "id": 7
     }
   ],
   "category": [

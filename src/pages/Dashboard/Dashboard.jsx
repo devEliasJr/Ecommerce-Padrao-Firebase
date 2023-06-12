@@ -31,7 +31,7 @@ const Dashboard = () => {
             <p className="name">{item.name}</p>
             <div className="icon">
               <p onClick={() => {}} className="edit">
-                <Link to={"/"}>
+                <Link to={`/product-edit/${item.id}`}>
                   <FaUserEdit />
                 </Link>
               </p>
