@@ -1,0 +1,60 @@
+:root {
+  --low-gray: #8c8c8c;
+  --medium-gray: #2a2a2a;
+  --high-gray: #121212;
+  --bg-color: #000000;
+  --white-color: #fff;
+  --btn-color: #404040;
+  --btn-color-hover: #212121;
+  --btn-close: #ff605c;
+}
+
+.container {
+  margin: 20 auto;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.container-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  min-width: 400px;
+  border-radius: 4px;
+  background: #2a2a2a;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  font-size: 1.25rem;
+}
+
+.items p {
+  font-size: 1.25rem;
+  color: var(--white-color);
+}
+
+.icon {
+  display: flex;
+  gap: 20px;
+}
+
+.icon p:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.icon .edit a {
+  color: var(--low-gray);
+}
+
+.icon .close a {
+  color: var(--btn-close);
+}

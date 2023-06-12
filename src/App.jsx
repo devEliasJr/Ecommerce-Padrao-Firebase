@@ -10,10 +10,13 @@ import Footer from "./componets/Footer";
 
 //Pages
 import ProductsCards from "./componets/products-Cards"
-import ProductsRegister from "./componets/productsRegister";
 import ProductDescription from "./pages/ProductDescription";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import About from "./pages/About/About";
+import Home from "./pages/Home/Home";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import NewProducts from "./pages/NewProducts/NewProducts";
 
 function App() {
   return (
@@ -21,12 +24,12 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" element={<ProductsCards />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<Dashboard />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/product-register" element={<ProductsRegister />} />
+          <Route path="/product-register" element={<NewProducts />} />
           <Route path="/product-description/:id/:name" element={<ProductDescription />} />
-          <Route path="/product/register" element={<ProductsRegister />} />
         </Routes>
         <Footer />
       </BrowserRouter>

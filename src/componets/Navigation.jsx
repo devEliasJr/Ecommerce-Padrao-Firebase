@@ -29,7 +29,7 @@ const Navigation = () => {
                 </NavLink>
               </li>
               <li className="header-nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/about">
                   About
                 </NavLink>
               </li>

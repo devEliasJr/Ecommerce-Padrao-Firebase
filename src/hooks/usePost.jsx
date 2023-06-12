@@ -1,37 +1,21 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import apiFetch from "../axios/config";
 
-export const usePost = (url) => {
-  const [config, setConfig] = useState(null);
-  const [method, setMethod] = useState(null);
-  const [callFetch, setCallFetch] = useState(false);
+export const usePost = () => {
+  const [name, setName] = useState()
+  const [price, setPrice] = useState()
 
-  const httpConfig = (data, method) => {
-    if (method === "POST") {
-      setConfig({
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      setMethod(method);
-    }
+
+  const product = {
+    id,
+    name,
+    price
+  }
+
+  const postProduct = async () => {
+    const response = await apiFetch.post("/", product);
+
+    setData(response)
   };
-
-  useEffect(() => {
-    const httpResquest = async () => {
-      if (method === "POST") {
-        let fetchOptions = [url, config];
-
-        const res = await fetch(...fetchOptions);
-
-        const json = await res.json();
-
-        setCallFetch(json);
-      }
-    };
-    httpResquest()
-  }, [config, method, url]);
-
-  return { data, httpConfig, loading, error };
+  return {};
 };
