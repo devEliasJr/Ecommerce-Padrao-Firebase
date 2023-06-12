@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react";
 import apiFetch from "../axios/config";
 
-
-
 export const useGet = () => {
   const [datas, setDatas] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const fetchApi = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
       const response = await apiFetch.get("/");
       setDatas(response.data);
     } catch (error) {
       setError(<p>Dados não encontrados, tente novamente mais tarde!</p>);
     }
-    setLoading(false)
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchApi();
   }, []);
 
-  return { datas, error, loading };
+  //Dashboard - Remove excluded itens
+  const itemsFilter = (filter) => {
+    setDatas(filter)
+  }
+
+  return { datas, error, loading, itemsFilter};
 };

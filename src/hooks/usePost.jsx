@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import apiFetch from "../axios/config";
 
 export const usePost = () => {
