@@ -1,9 +1,23 @@
-import React from 'react'
+import { useState } from "react";
+import { usePost } from "../../hooks/usePost";
+
 
 const NewProducts = () => {
-  return (
-    <div><h1>Cadastre um novo produto</h1></div>
-  )
-}
+  const [name, setName] = useState();
+  const [price, setPrice] = useState();
 
-export default NewProducts
+  
+  const { createPost } = usePost();
+
+  const product = {name: "teste", price: 1};
+
+
+  return (
+    <div>
+      <h1>Cadastre um novo produto</h1>
+      <button onClick={() => {createPost(product)}}>testar</button>
+    </div>
+  );
+};
+
+export default NewProducts;
