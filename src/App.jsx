@@ -33,13 +33,15 @@ function App() {
   const [user, setUser] = useState(undefined);
   const { auth } = useAuthentication();
 
-  const loadingUser = user == undefined;
+  const loadingUser = user === undefined;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
   }, [auth]);
+
+  console.log(user, loadingUser)
 
   if (loadingUser) {
     return <p>Carregando...</p>;

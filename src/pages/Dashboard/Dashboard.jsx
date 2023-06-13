@@ -6,10 +6,16 @@ import "./Dashboard.css";
 
 import { FaWindowClose, FaUserEdit } from "react-icons/fa";
 
+//context
+import { useAuthValue } from "../../context/authContext";
+import { useAuthentication } from "../../hooks/useAuthentication";
+
 const Dashboard = () => {
   const { datas: items, error, loading, deletePosts, itemsFilter } = useGet();
 
   const { deletePost } = useDelete();
+  const { user } = useAuthValue();
+  const { logout } = useAuthentication();
 
   const handleDelete = (id) => {
     deletePost(id);
@@ -22,8 +28,12 @@ const Dashboard = () => {
 
       <div className="container-items">
         <p>
-          Edite seus produtos ou crie um{" "}
+          Olá {user.displayName}, Seja bem vindo          
+          <button onClick={logout}>Logout</button>
           <Link to={"/product-register"}>Novo</Link>
+        </p>
+        <p>
+          Edite seus produtos ou crie um       
         </p>
 
         {items.map((item, i) => (

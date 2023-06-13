@@ -17,7 +17,6 @@ import { useAuthValue } from "../context/authContext";
 const Navigation = () => {
   const [mobmenu, setmobMenu] = useState("");
   const { user } = useAuthValue();
-  console.log(user.displayName)
 
   return (
     <header>
