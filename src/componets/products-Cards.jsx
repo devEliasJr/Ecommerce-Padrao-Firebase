@@ -8,7 +8,7 @@ import './products-Cards.css'
 const url = "http://localhost:3000/products";
 
 //Custom Hook
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../hooks/backup/useFetch";
 
 //GET products in the database and create a cards to show them
 export default function ProductsCards() {
