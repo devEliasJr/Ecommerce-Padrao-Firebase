@@ -10,9 +10,14 @@ import "./Navigation.css";
 
 //Hooks
 import { useEffect, useState } from "react";
+//Context
+import { useAuthentication } from "../hooks/useAuthentication";
+import { useAuthValue } from "../context/authContext";
 
 const Navigation = () => {
   const [mobmenu, setmobMenu] = useState("");
+  const { user } = useAuthValue();
+  console.log(user.displayName)
 
   return (
     <header>
@@ -51,11 +56,20 @@ const Navigation = () => {
             )}
           </nav>
         )}
+        {!user &&
         <div className="header-login" onClick={() => {}}>
-          <NavLink  to="/login">
+          <NavLink to="/login">
             <FaUserAlt /> Login
           </NavLink>
-        </div>
+        </div>}
+
+        {user &&
+        <div className="header-login" onClick={() => {}}>
+          <NavLink to="/dashboard">
+            <FaUserAlt /> {`${user.displayName}`}
+          </NavLink>
+        </div>}
+
         <div
           className="header-menu-mob"
           onClick={() => {
