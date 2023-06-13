@@ -3,7 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import apiFetch from "../../axios/config";
 
 const EditPost = () => {
+
   const { id } = useParams();
+
   const navigate = useNavigate()
 
   const [name, setName] = useState();
@@ -13,6 +15,8 @@ const EditPost = () => {
   const [loading, setLoading] = useState(false);
 
 
+  //Get product at a specific id
+  //to-do: custom hook for re-use in page product
   const fetchApi = async () => {
     setLoading(true);
     try {
