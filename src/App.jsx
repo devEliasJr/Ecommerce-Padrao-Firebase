@@ -1,8 +1,15 @@
 //router-dom
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-//Context
+//Provider Context App
 import { AuthProvider } from "./context/authContext";
+
+//Context - FireBase
+import { onAuthStateChanged } from "firebase/auth";
+
+//Hooks
+import { useEffect, useState } from "react";
+import { useAuthentication } from "./hooks/useAuthentication";
 
 //Style - CSS
 import "./App.css";
@@ -23,9 +30,24 @@ import NewProducts from "./pages/NewProducts/NewProducts";
 import EditPost from "./pages/EditPost/EditPost";
 
 function App() {
+  const [user, setUser] = useState(undefined);
+  const { auth } = useAuthentication();
+
+  const loadingUser = user == undefined;
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+  }, [auth]);
+
+  if (loadingUser) {
+    return <p>Carregando...</p>;
+  }
+
   return (
     <>
-      <AuthProvider>
+      <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navigation />
           <Routes>
