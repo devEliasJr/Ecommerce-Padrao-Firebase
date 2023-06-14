@@ -1,0 +1,118 @@
+.container-nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.container-nav-logo-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-nav-header-logo {
+  width: 20%;
+}
+
+.container-nav-header-logo a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.container-nav-header-search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  position: relative;
+  max-width: 650px;
+  margin-right: 10px;
+}
+
+.container-nav-header-search input {
+  display: block;
+  height: 35px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.container-nav-header-search button {
+  display: block;
+  padding: 0px;
+  height: 30px;
+  width: 60px;
+  border-radius: 4px;
+  border: none;
+  background: orange;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+
+.container-nav-menus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.container-nav-menus-item {
+  display: flex;
+  gap: 20px;
+}
+.container-nav-menus .menu li {
+  list-style: none;
+}
+.container-nav-menus .menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container-nav-menus.sub {
+  justify-content: start;
+}
+
+.container-nav-menus-item.menu {
+  padding: 0px;
+}
+
+.container-nav-menus.login {
+  justify-content: end;
+}
+
+.container-nav-menus-item li {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 0.965rem;
+  font-weight: 300;
+}
+
+@media (max-width: 580px) {
+    .container-nav-logo-search {
+        flex-direction: column;
+    }
+    .container-nav-header-search input {
+        width: 90vw;
+    }
+    .container-nav-header-logo {
+        margin-bottom: 5%;
+    }
+
+    .container-nav-menus-item .dash {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+   
+    .container-nav-menus-item .reg {
+        display: none;
+    }
+    .container-nav-menus-item .new {
+        display: none;
+    }
+}

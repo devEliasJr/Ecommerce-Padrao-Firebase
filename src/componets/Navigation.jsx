@@ -1,5 +1,11 @@
 //React Icons
-import { FaCloudsmith, FaUserAlt, FaWindowClose } from "react-icons/fa";
+import {
+  FaCloudsmith,
+  FaUserAlt,
+  FaWindowClose,
+  FaPlusCircle,
+  FaPlusSquare,
+} from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 
 // Router Dom
@@ -7,6 +13,7 @@ import { NavLink } from "react-router-dom";
 
 // Style - CSS
 import "./Navigation.css";
+import "./Nav.css";
 
 //Hooks
 import { useEffect, useState } from "react";
@@ -20,63 +27,72 @@ const Navigation = () => {
 
   return (
     <header>
-      <div className="header-container">
-        <div className="header-logo">
-          <FaCloudsmith /> logo
+      <div className="container-nav">
+        <div className="container-nav-logo-search">
+          <div className="container-nav-header-logo">
+            <NavLink to="/">
+              <FaCloudsmith /> Logo
+            </NavLink>
+          </div>
+          <div className="container-nav-header-search">
+            <input type="text" />
+            <button>Buscar</button>
+          </div>
         </div>
-        {true && (
-          <nav className="nav-container">
-            <ul className="header-nav" style={{ display: mobmenu }}>
-              <li className="header-nav-item">
+
+        <nav className="container-nav-menus">
+          <div className="container-nav-menus sub">
+            <ul className="container-nav-menus-item menu">
+              <li className="container-nav-menus-item">
                 <NavLink className="nav-link" to="/">
                   Home
                 </NavLink>
               </li>
-              <li className="header-nav-item">
+              <li className="container-nav-menus-item">
                 <NavLink className="nav-link" to="/about">
                   About
                 </NavLink>
               </li>
-              <li className="header-nav-item">
+              <li className="container-nav-menus-item">
                 <NavLink className="nav-link" to="/">
                   Contact
                 </NavLink>
               </li>
             </ul>
-            {mobmenu === "flex" && (
-              <i
-                className="close-icon"
-                onClick={() => {
-                  setmobMenu("");
-                }}
-              >
-                <FaWindowClose />
-              </i>
+          </div>
+          <div className="container-nav-menus login">
+            {!user && (
+              <ul className="container-nav-menus-item menu">
+                <li className="log">
+                  <NavLink to="/login">
+                    <FaUserAlt /> Entre
+                  </NavLink>
+                </li>
+                <li className="reg">
+                  <NavLink to="/register">
+                    Cadastrar
+                  </NavLink>
+                </li>
+              </ul>
             )}
-          </nav>
-        )}
-        {!user &&
-        <div className="header-login" onClick={() => {}}>
-          <NavLink to="/login">
-            <FaUserAlt /> Login
-          </NavLink>
-        </div>}
 
-        {user &&
-        <div className="header-login" onClick={() => {}}>
-          <NavLink to="/dashboard">
-            <FaUserAlt /> {`${user.displayName}`}
-          </NavLink>
-        </div>}
-
-        <div
-          className="header-menu-mob"
-          onClick={() => {
-            setmobMenu("flex");
-          }}
-        >
-          <AiOutlineMenu />
-        </div>
+            {user && (
+              <ul className="container-nav-menus-item menu">
+                <li className="name">
+                  <NavLink to="/dashboard">
+                    <FaUserAlt /> {`${user.displayName}`}
+                  </NavLink>
+                </li>
+                <li className="dash">
+                  <NavLink to="/dashboard">Meus produtos</NavLink>
+                </li>
+                <li className="new">
+                  <NavLink to="/product-register">Novo</NavLink>
+                </li>
+              </ul>
+            )}
+          </div>
+        </nav>
       </div>
     </header>
   );
