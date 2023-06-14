@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Style - CSS
-import "../../componets/products-Cards.css";
+import "./Home.css";
 
 //Set url
 const url = "http://localhost:3000/products";
@@ -18,26 +18,20 @@ export default function Home() {
   console.log(loading);
 
   return (
-    <>
+    <div className="container">
       {loading && <p>Carregando...</p>}
       {!error & (items.length > 0) ? (
-        <div className="container-grid">
+        <div className="container-product-main">
           {items.map((product, i) => (
-            <div key={i} className="product-container">
-              <h2 className="product-container-title">{product.name}</h2>
-              <img src="https://placehold.co/400x400" />
-              <p className="product-container-description">
-                {product.description}
-              </p>
-              <p className="product-container-price">R$:{product.price}</p>
-              <Link
-                className="product-container-btn"
-                to={`/product-description/${product.id}/${product.name}`}
-              >
-                <span className="product-container-btn-txt">
-                  Saiba Mais ...
-                </span>
-              </Link>
+            <div key={i} className="container-product-card">
+              <div className="container-product-img">
+                <img src="https://placehold.co/400x400" />
+              </div>
+
+              <div className="container-body">
+                <span className="container-body-name">{product.name}</span>
+                <span className="container-body-price">{`R$ ${product.price}`}</span>
+              </div>
             </div>
           ))}
         </div>
@@ -46,6 +40,6 @@ export default function Home() {
           <p>{error}</p>
         </div>
       )}
-    </>
+    </div>
   );
 }

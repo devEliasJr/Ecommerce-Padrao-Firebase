@@ -43,6 +43,55 @@
       "price": "7",
       "description": "Garrafa retornável de 1 litro",
       "id": 7
+    },
+    {
+      "id": 8,
+      "name": "X-Tudo",
+      "description": "Pão, 2 bifes de hambúrguer 90g, 2 fatias de queijo, 4 fatias de bacon, salada e batata.",
+      "price": 14.5,
+      "category_id": 1
+    },
+    {
+      "name": "Coca cola 350ml",
+      "price": 5.5,
+      "description": "Lata 350 ml",
+      "id": 9
+    },
+    {
+      "name": "Coca cola 600ml",
+      "price": 7.5,
+      "description": "Garrafa 600 ml",
+      "id": 10
+    },
+    {
+      "name": "Guaraná Antartica 1l",
+      "price": "7",
+      "description": "Garrafa retornável de 1 litro",
+      "id": 11
+    },
+    {
+      "name": "Coca cola 350ml",
+      "price": 5.5,
+      "description": "Lata 350 ml",
+      "id": 12
+    },
+    {
+      "name": "Coca cola 600ml",
+      "price": 7.5,
+      "description": "Garrafa 600 ml",
+      "id": 13
+    },
+    {
+      "name": "Guaraná Antartica 1l",
+      "price": "7",
+      "description": "Garrafa retornável de 1 litro",
+      "id": 14
+    },
+    {
+      "name": "Guaraná Antartica 1l",
+      "price": "7",
+      "description": "Garrafa retornável de 1 litro",
+      "id": 14
     }
   ],
   "category": [
