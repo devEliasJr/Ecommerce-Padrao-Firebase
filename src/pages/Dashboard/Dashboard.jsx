@@ -27,9 +27,9 @@ const Dashboard = () => {
       <h1 className="page-title">Admin Dashboard</h1>
 
       <div className="container-items">
-        <p>
-          Olá {user.displayName}, Seja bem vindo          
-          <button onClick={logout}>Logout</button>
+      <p>Olá {user.displayName}, Seja bem vindo </p>
+      <button className="btn" onClick={logout}>Logout</button>
+        <p>         
           <Link to={"/product-register"}>Novo</Link>
         </p>
         <p>

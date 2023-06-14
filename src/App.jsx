@@ -41,7 +41,6 @@ function App() {
     });
   }, [auth]);
 
-  console.log(user, loadingUser)
 
   if (loadingUser) {
     return <p>Carregando...</p>;
