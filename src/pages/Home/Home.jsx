@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // Style - CSS
 import "./Home.css";
+import "../../global.css"
 
 //Set url
 const url = "http://localhost:3000/products";

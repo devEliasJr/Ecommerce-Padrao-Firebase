@@ -30,14 +30,15 @@
   margin-right: 10px;
 }
 
-.container-nav-header-search input {
+/* Moved to global CSS */
+/* .container-nav-header-search input {
   display: block;
   height: 35px;
   border: none;
   outline: none;
   border-radius: 2px;
   width: 100%;
-}
+} */
 
 .container-nav-header-search button {
   display: block;

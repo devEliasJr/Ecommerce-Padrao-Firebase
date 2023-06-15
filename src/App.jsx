@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { useAuthentication } from "./hooks/useAuthentication";
 
 //Style - CSS
-import "./App.css";
+import "./global.css";
 
 //Components
 import Navigation from "./componets/Navigation";

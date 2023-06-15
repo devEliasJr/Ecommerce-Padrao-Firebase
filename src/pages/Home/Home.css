@@ -36,6 +36,7 @@
   flex-direction: column;
   padding: 10px;
   color: #111;
+  text-align: left;
 }
 
 .container-body-price {
@@ -47,6 +48,7 @@
   color: #222222;
   font-size: 0.95rem;
   line-height: 1.05rem;
+  margin-bottom: 5px;
 }
 
 .container-product-card:hover {
