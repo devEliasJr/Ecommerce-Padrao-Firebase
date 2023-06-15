@@ -1,17 +1,15 @@
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { useEffect, useState } from "react";
+import { RiErrorWarningFill } from "react-icons/ri";
+
 import "./Login.css";
 
 const Login = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const { login, error: authError, loading } = useAuthentication();
-
-  console.log(email)
-  console.log(password)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,8 +20,8 @@ const Login = () => {
       password,
     };
 
-    const res = await login(user)
-    console.log(res)
+    const res = await login(user);
+    console.log(res);
   };
 
   useEffect(() => {
@@ -34,10 +32,10 @@ const Login = () => {
 
   return (
     <div className="container">
-      <h2>Realize o login para começar</h2>
-      <p>Não tem uma conta? Crie agora clicando aqui.</p>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <h2 className="title-page">Realizar Login</h2>
+      <p>Informe corretamente as suas credenciais para começar</p>
+      <form className="form-container" onSubmit={handleSubmit}>
+        <label className="label-form">
           <input
             type="email"
             name="email"
@@ -48,7 +46,7 @@ const Login = () => {
             }}
           />
         </label>
-        <label>
+        <label className="label-form">
           <input
             type="password"
             name="password"
@@ -59,13 +57,26 @@ const Login = () => {
             }}
           />
         </label>
-        {!loading && <button type="submit">Entrar</button>}
-        {loading && (
-          <button type="submit" disabled>
-            Aguarde...
-          </button>
+        <div className="container-btns">
+          {!loading && (
+            <button className="btn-submit" type="submit">
+              Entrar
+            </button>
+          )}
+          {!loading && <button className="btn-register">Criar Conta</button>}
+          {loading && (
+            <button className="btn-submit" disabled>
+              Aguarde...
+            </button>
+          )}
+        </div>
+
+        {error && (
+          <div className="message-error error-position">
+            <span className="error-icon">{<RiErrorWarningFill />}</span>
+            <span>{error}</span>
+          </div>
         )}
-        {error && <p>{error}</p>}
       </form>
     </div>
   );
