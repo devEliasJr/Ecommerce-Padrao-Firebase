@@ -1,4 +1,5 @@
 import { useAuthentication } from "../../hooks/useAuthentication";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { RiErrorWarningFill } from "react-icons/ri";
 
@@ -63,7 +64,7 @@ const Login = () => {
               Entrar
             </button>
           )}
-          {!loading && <button className="btn-register">Criar Conta</button>}
+          {!loading && <Link to="/register" className="btn-register">Criar Conta</Link>}
           {loading && (
             <button className="btn-submit" disabled>
               Aguarde...
