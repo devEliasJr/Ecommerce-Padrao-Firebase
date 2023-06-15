@@ -1,6 +1,9 @@
 import { useAuthentication } from "../../hooks/useAuthentication";
 import "../Login/Login.css";
 import { useEffect, useState } from "react";
+import { RiErrorWarningFill } from "react-icons/ri";
+
+import './Register.css'
 
 const Register = () => {
   const [displayName, setDisplayName] = useState("");
@@ -28,7 +31,6 @@ const Register = () => {
 
     const res = await createUser(user);
     console.log(res);
-
   };
 
   useEffect(() => {
@@ -39,21 +41,21 @@ const Register = () => {
 
   return (
     <div className="container">
-      <h2>Crie a sua conta</h2>
-      <p>Já tem uma conta? Faça login agora mesmo.</p>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <h2 className="title-page">Crie a sua conta</h2>
+      <p>Cadastre-se para utilizar a plataforma</p>
+      <form className="form-container" onSubmit={handleSubmit}>
+        <label className="label-form">
           <input
             type="text"
             name="displayName"
-            placeholder="Nome do usuário"
+            placeholder="Nome Completo"
             value={displayName}
             onChange={(e) => {
               setDisplayName(e.target.value);
             }}
           />
         </label>
-        <label>
+        <label className="label-form">
           <input
             type="email"
             name="email"
@@ -64,7 +66,7 @@ const Register = () => {
             }}
           />
         </label>
-        <label>
+        <label className="label-form">
           <input
             type="password"
             name="password"
@@ -75,7 +77,7 @@ const Register = () => {
             }}
           />
         </label>
-        <label>
+        <label className="label-form">
           <input
             type="password"
             name="confirmPassword"
@@ -86,9 +88,24 @@ const Register = () => {
             }}
           />
         </label>
-        {!loading && <button type="submit">Criar Conta</button>}
-        {loading && <button type="submit" disabled>Aguarde...</button>}   
-        {error && <p>{error}</p>}
+        <div className="container-btns">
+          {!loading && (
+            <button className="btn-submit" type="submit">
+              Cadastrar
+            </button>
+          )}
+          {loading && (
+            <button className="btn-submit" disabled>
+              Aguarde...
+            </button>
+          )}
+        </div>
+        {error && (
+          <div className="message-error error-position">
+            <span className="error-icon">{<RiErrorWarningFill />}</span>
+            <span>{error}</span>
+          </div>
+        )}
       </form>
     </div>
   );
