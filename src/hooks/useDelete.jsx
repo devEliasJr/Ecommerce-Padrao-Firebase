@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import apiFetch from "../axios/config";
-import { render } from "react-dom";
 
 export const useDelete = () => {
   const navigate = useNavigate();
@@ -9,6 +8,7 @@ export const useDelete = () => {
     try {
       await apiFetch.delete(`/${id}`);
       alert('Deletado com sucesso')
+      navigate("/dashboard")
     } catch (error) {
       console.log(error);
     }

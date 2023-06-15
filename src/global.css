@@ -32,7 +32,7 @@ body {
 
 /* Configurações para formuláios */
 
-input {
+input, textarea {
   display: block;
   height: 35px;
   border: none;
@@ -41,6 +41,7 @@ input {
   width: 100%;
   padding: 2px 10px;
   font-family: inherit;
+  font-size: 0.97rem;
   color: #2a2a2a;
 }
 
