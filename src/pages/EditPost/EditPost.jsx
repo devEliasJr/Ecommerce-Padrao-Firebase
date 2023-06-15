@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import apiFetch from "../../axios/config";
+import "../Login/Login.css";
 
 const EditPost = () => {
-
   const { id } = useParams();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [name, setName] = useState();
   const [price, setPrice] = useState();
   const [description, setDescription] = useState();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
 
   //Get product at a specific id
   //to-do: custom hook for re-use in page product
@@ -27,7 +26,7 @@ const EditPost = () => {
       setPrice(data.price);
       setDescription(data.description);
     } catch (error) {
-      setError(<p>Dados não encontrados, tente novamente mais tarde!</p>);
+      setError(error);
     }
     setLoading(false);
   };
@@ -40,27 +39,27 @@ const EditPost = () => {
     try {
       e.preventDefault();
 
-      const post = {name, price, description}
+      const post = { name, price, description };
       await apiFetch.put(`/${id}`, post);
 
       alert("Atualizado com sucesso");
-      navigate('/about')
-
+      navigate("/about");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div>
-      <h1>Edite um produto</h1>
+    <div className="container">
+      <h1 className="title-page">Edite um produto</h1>
 
       <form
+        className="form-container"
         onSubmit={(e) => {
           updatePost(e);
         }}
       >
-        <label htmlFor="name">
+        <label htmlFor="name" className="label-form">
           <input
             type="text"
             name="name"
@@ -70,7 +69,7 @@ const EditPost = () => {
             required
           />
         </label>
-        <label htmlFor="price">
+        <label htmlFor="price" className="label-form">
           <input
             type="number"
             name="price"
@@ -80,7 +79,7 @@ const EditPost = () => {
             required
           />
         </label>
-        <label htmlFor="description">
+        <label htmlFor="description" className="label-form">
           <textarea
             type="text"
             name="description"
@@ -90,7 +89,24 @@ const EditPost = () => {
             required
           ></textarea>
         </label>
-        <input type="submit" value="Cadastrar" />
+        <div className="container-btns">
+          {!loading && (
+            <button className="btn-submit" type="submit">
+              Confirmar Alterações
+            </button>
+          )}
+          {loading && (
+            <button className="btn-submit" disabled>
+              Aguarde...
+            </button>
+          )}
+        </div>
+        {error && (
+          <div className="message-error error-position">
+            <span className="error-icon">{<RiErrorWarningFill />}</span>
+            <span>{error}</span>
+          </div>
+        )}
       </form>
     </div>
   );
