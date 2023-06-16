@@ -79,7 +79,7 @@ const Navigation = () => {
             {user && (
               <ul className="container-nav-menus-item menu">
                 <li className="name">
-                  <NavLink to="/dashboard">
+                  <NavLink to="/my-profile">
                     <FaUserAlt /> {`${user.displayName}`}
                   </NavLink>
                 </li>

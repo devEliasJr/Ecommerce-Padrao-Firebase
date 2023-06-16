@@ -28,6 +28,7 @@ import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import NewProducts from "./pages/NewProducts/NewProducts";
 import EditPost from "./pages/EditPost/EditPost";
+import MyProfile from "./pages/MyProfile/MyProfile";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -66,6 +67,10 @@ function App() {
             <Route
               path="/dashboard"
               element={user ? <Dashboard /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/my-profile"
+              element={user ? <MyProfile /> : <Navigate to="/login" />}
             />
             <Route
               path="/product-description/:id/:name"

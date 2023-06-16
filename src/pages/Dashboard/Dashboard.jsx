@@ -7,7 +7,7 @@ import "./Dashboard.css";
 import { FaWindowClose, FaUserEdit } from "react-icons/fa";
 
 //context
-import { useAuthValue } from "../../context/authContext";
+import { useAuthValue } from "../../context/AuthContext"
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 const Dashboard = () => {

@@ -11,7 +11,6 @@ const NewProducts = () => {
 
 
   const { createPost, loading, error } = usePost();
-  console.log(loading)
 
   const navigate = useNavigate();
 
