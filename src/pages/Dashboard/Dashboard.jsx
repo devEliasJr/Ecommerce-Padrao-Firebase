@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { useGet } from "../../hooks/useGet";
 import { useDelete } from "../../hooks/useDelete";
 
-import "./Dashboard.css";
+import "./Dashboard.sass";
 
 import { FaWindowClose, FaUserEdit } from "react-icons/fa";
 
 //context
-import { useAuthValue } from "../../context/AuthContext"
+import { useAuthValue } from "../../context/AuthContext";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 const Dashboard = () => {
@@ -24,37 +24,56 @@ const Dashboard = () => {
 
   return (
     <div className="container">
-      <h1 className="page-title">Admin Dashboard</h1>
+      <h1 className="page-title">Meus Produtos</h1>
+      <div className="container-sub">
+        <p className="gerenciar">Gerencie seus anuncios</p>
+        <Link className="anunciar" to={"/product-register"}>
+          Anunciar
+        </Link>
+      </div>
 
       <div className="container-items">
-      <p>Olá {user.displayName}, Seja bem vindo </p>
-      <button className="btn" onClick={logout}>Logout</button>
-        <p>         
-          <Link to={"/product-register"}>Novo</Link>
-        </p>
-        <p>
-          Edite seus produtos ou crie um       
-        </p>
-
         {items.map((item, i) => (
-          <div key={i} className="items">
-            <p className="name">{item.name}</p>
-            <div className="icon">
-              <p onClick={() => {}} className="edit">
-                <Link to={`/product-edit/${item.id}`}>
-                  <FaUserEdit />
-                </Link>
-              </p>
-              <p
-                onClick={() => {
-                  handleDelete(item.id);
-                }}
-                className="close"
-              >
-                <Link to={"/about"}>
-                  <FaWindowClose />
-                </Link>
-              </p>
+          <div key={i} className="card">
+            <img src="https://placehold.co/400" alt="" />
+            <div className="card-body">
+              <div className="content-info">
+                <div className="name">
+                  <span>{item.name}</span>
+                </div>
+                <div className="description">
+                  <span>{item.description}</span>
+                </div>
+              </div>
+              <div className="content-misc">
+                <div className="options">
+                  <span className="edit" onClick={() => {}}>
+                    <Link to={`/product-edit/${item.id}`}>
+                      <span>Ver</span>
+                    </Link>
+                  </span>
+                  <span className="edit" onClick={() => {}}>
+                    <Link to={`/product-edit/${item.id}`}>
+                      <span>Editar</span>
+                    </Link>
+                  </span>
+                  <span
+                    className="close"
+                    onClick={() => {
+                      handleDelete(item.id);
+                    }}
+                  >
+                    <Link to={"/about"}>Excluir</Link>
+                  </span>
+                </div>
+                <div className="price">
+                  <span>R${item.price}</span>
+                </div>
+                <div className="stock">
+                  <p>Promoção: Não</p>
+                  <p>Estoque: 5 unidades</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}

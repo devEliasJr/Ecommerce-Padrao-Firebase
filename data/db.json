@@ -2,7 +2,7 @@
   "products": [
     {
       "name": "Hambúrguer",
-      "price": 8.5,
+      "price": "8.99",
       "description": "Pão, bife de hambúrguer 90g, salada e batata.",
       "id": 1
     },

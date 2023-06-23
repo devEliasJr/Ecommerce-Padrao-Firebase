@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Style - CSS
-import "./Home.css";
+import "./Home.sass";
 import "../../../global_styles/global.sass";
 
 //Set url
