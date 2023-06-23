@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { RiErrorWarningFill } from "react-icons/ri";
 
-import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -60,20 +59,20 @@ const Login = () => {
         </label>
         <div className="container-btns">
           {!loading && (
-            <button className="btn-submit" type="submit">
+            <button className="btn" type="submit">
               Entrar
             </button>
           )}
-          {!loading && <Link to="/register" className="btn-register">Criar Conta</Link>}
+          {!loading && <Link to="/register" className="btn register">Criar Conta</Link>}
           {loading && (
-            <button className="btn-submit" disabled>
+            <button className="btn" disabled>
               Aguarde...
             </button>
           )}
         </div>
 
         {error && (
-          <div className="message-error error-position">
+          <div className="messages error">
             <span className="error-icon">{<RiErrorWarningFill />}</span>
             <span>{error}</span>
           </div>

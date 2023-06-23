@@ -1,9 +1,8 @@
 import { useAuthentication } from "../../hooks/useAuthentication";
-import "../Login/Login.css";
 import { useEffect, useState } from "react";
 import { RiErrorWarningFill } from "react-icons/ri";
 
-import './Register.css'
+
 
 const Register = () => {
   const [displayName, setDisplayName] = useState("");
@@ -90,18 +89,18 @@ const Register = () => {
         </label>
         <div className="container-btns">
           {!loading && (
-            <button className="btn-submit" type="submit">
+            <button className="btn" type="submit">
               Cadastrar
             </button>
           )}
           {loading && (
-            <button className="btn-submit" disabled>
+            <button className="btn" disabled>
               Aguarde...
             </button>
           )}
         </div>
         {error && (
-          <div className="message-error error-position">
+          <div className="messages error">
             <span className="error-icon">{<RiErrorWarningFill />}</span>
             <span>{error}</span>
           </div>

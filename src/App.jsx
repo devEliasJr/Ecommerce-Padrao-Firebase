@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 //Provider Context App
-import { AuthProvider } from "./context/authContext";
+import { AuthProvider } from "./context/AuthContext";
 
 //Context - FireBase
 import { onAuthStateChanged } from "firebase/auth";
@@ -12,7 +12,8 @@ import { useEffect, useState } from "react";
 import { useAuthentication } from "./hooks/useAuthentication";
 
 //Style - CSS
-import "./global.css";
+import "../global_styles/global.sass";
+
 
 //Components
 import Navigation from "./componets/Navigation";
@@ -29,6 +30,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import NewProducts from "./pages/NewProducts/NewProducts";
 import EditPost from "./pages/EditPost/EditPost";
 import MyProfile from "./pages/MyProfile/MyProfile";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -54,7 +56,7 @@ function App() {
           <Navigation />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<Home />} />
             <Route
               path="/login"

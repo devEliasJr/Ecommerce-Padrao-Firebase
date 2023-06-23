@@ -19,7 +19,7 @@ import "./Nav.css";
 import { useEffect, useState } from "react";
 //Context
 import { useAuthentication } from "../hooks/useAuthentication";
-import { useAuthValue } from "../context/authContext";
+import { useAuthValue } from "../context/AuthContext";
 
 const Navigation = () => {
   const [mobmenu, setmobMenu] = useState("");
@@ -54,7 +54,7 @@ const Navigation = () => {
                 </NavLink>
               </li>
               <li className="container-nav-menus-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/contact">
                   Contact
                 </NavLink>
               </li>

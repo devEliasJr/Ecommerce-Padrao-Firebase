@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import apiFetch from "../../axios/config";
-import "../Login/Login.css";
+
 
 const EditPost = () => {
   const { id } = useParams();
@@ -91,18 +91,18 @@ const EditPost = () => {
         </label>
         <div className="container-btns">
           {!loading && (
-            <button className="btn-submit" type="submit">
+            <button className="btn" type="submit">
               Confirmar Alterações
             </button>
           )}
           {loading && (
-            <button className="btn-submit" disabled>
+            <button className="btn" disabled>
               Aguarde...
             </button>
           )}
         </div>
         {error && (
-          <div className="message-error error-position">
+          <div className="messages error">
             <span className="error-icon">{<RiErrorWarningFill />}</span>
             <span>{error}</span>
           </div>

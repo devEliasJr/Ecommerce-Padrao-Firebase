@@ -1,0 +1,102 @@
+@use './variables'
+
+//Buttons
+.btn
+  padding: 15px 40px
+  border-radius: variables.$btn-bd-rd
+  color: variables.$btn-color
+  background: variables.$btn-bg
+  font-weight: variables.$btn-fw
+  box-shadow: variables.$btn-shadow
+  text-decoration: none
+  border: none
+  cursor: pointer
+  font-size: 1rem
+  font-family: inherit
+
+  &:focus
+    outline: 2px solid variables.$white-color
+
+.register
+  background: variables.$btn-bg-reg
+  color: variables.$btn-col-reg
+  box-shadow: variables.$btn-shadow-reg
+
+  &:focus
+    outline: 2px solid variables.$main-details-components
+
+//Messages
+.messages
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 10px 0
+  gap: 5px
+  font-size: 0.965rem
+  border: variables.$msg-bd
+  border-radius: variables.$msg-bd-rd
+  background-color: variables.$msg-bg
+  color: variables.$msg-color
+
+  & .error-icon
+    display: flex
+    padding: 0
+    margin: 0
+
+.error
+  border: 1px solid variables.$red-color
+  background-color: variables.$red-color-30
+  color: variables.$red-color
+
+.warning
+  border: 1px solid variables.$low-gray
+  background-color: variables.$yellow-color-30
+  color: variables.$low-gray
+
+/* Padronização de formuláios */
+input, textarea
+  display: block
+  height: 35px
+  border: none
+  outline: none
+  border-radius: 2px
+  width: 100%
+  padding: 2px 10px
+  font-family: inherit
+  font-size: 0.97rem
+  color: variables.$low-gray
+
+input:focus
+  outline: 2px solid orange
+
+.form-container
+  display: flex
+  flex-direction: column
+  max-width: 500px
+  justify-content: center
+  align-self: center
+  margin: 0 auto
+  gap: 20px
+  border: 2px solid #e5e5e5
+  padding: 40px 30px
+  border-radius: 4px
+
+  .label-form
+    display: flex
+    flex: 1
+    align-items: center
+    position: relative
+    max-width: 650px
+    margin-right: 10px
+
+  .container-btns
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+    justify-content: center
+
+    @media (max-width: 500px)
+      .btn-submit,
+      .btn-register
+        margin: 0 auto
+        margin-top: 10px

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { usePost } from "../../hooks/usePost";
 import { useNavigate } from "react-router-dom";
 import { RiErrorWarningFill } from "react-icons/ri";
-import "../Login/Login.css";
+
 
 const NewProducts = () => {
   const [name, setName] = useState();
@@ -57,18 +57,18 @@ const NewProducts = () => {
         </label>
         <div className="container-btns">
           {!loading && (
-            <button className="btn-submit" type="submit">
+            <button className="btn" type="submit">
               Cadastrar
             </button>
           )}
           {loading && (
-            <button className="btn-submit" disabled>
+            <button className="btn" disabled>
               Aguarde...
             </button>
           )}
         </div>
         {error && (
-          <div className="message-error error-position">
+          <div className="messages error">
             <span className="error-icon">{<RiErrorWarningFill />}</span>
             <span>{error}</span>
           </div>

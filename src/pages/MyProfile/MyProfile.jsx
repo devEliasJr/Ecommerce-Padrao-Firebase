@@ -3,12 +3,10 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 import { useAuthValue } from "../../context/AuthContext"
 
 
-import "../Login/Login.css";
 import { useEffect, useState } from "react";
 import { RiErrorWarningFill } from "react-icons/ri";
 
-import "../Register/Register.css";
-import "./MyProfile.css"
+import "./MyProfile.sass"
 
 const MyProfile = () => {
   const [displayName, setDisplayName] = useState("");
@@ -58,7 +56,7 @@ const MyProfile = () => {
           alt="Foto de perfil"
         />
         <span>Olá {user.displayName}, seja bem vindo(a)!</span>
-        <button onClick={logout} className="btn-submit">Sair</button>
+        <button onClick={logout} className="btn">Sair</button>
       </div>
       <form className="form-container" onSubmit={handleSubmit}>
         <span>Dados pessoais</span>
@@ -108,18 +106,18 @@ const MyProfile = () => {
         </label>
         <div className="container-btns">
           {!loading && (
-            <button className="btn-submit" type="submit">
+            <button className="btn" type="submit">
               Alterar
             </button>
           )}
           {loading && (
-            <button className="btn-submit" disabled>
+            <button className="btn" disabled>
               Aguarde...
             </button>
           )}
         </div>
         {error && (
-          <div className="message-error error-position">
+          <div className="messages error">
             <span className="error-icon">{<RiErrorWarningFill />}</span>
             <span>{error}</span>
           </div>
