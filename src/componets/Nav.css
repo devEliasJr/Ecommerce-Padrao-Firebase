@@ -47,10 +47,13 @@
   width: 60px;
   border-radius: 4px;
   border: none;
-  background: orange;
+  /* background: orange; */
   position: absolute;
   right: 5px;
   cursor: pointer;
+  padding-top: 2px;
+  position: absolute;
+  right: 0px;
 }
 
 .container-nav-menus {

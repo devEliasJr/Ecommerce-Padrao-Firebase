@@ -5,6 +5,7 @@ import {
   FaWindowClose,
   FaPlusCircle,
   FaPlusSquare,
+  FaSearch,
 } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -14,6 +15,7 @@ import { NavLink } from "react-router-dom";
 // Style - CSS
 import "./Navigation.css";
 import "./Nav.css";
+
 
 //Hooks
 import { useEffect, useState } from "react";
@@ -35,8 +37,8 @@ const Navigation = () => {
             </NavLink>
           </div>
           <div className="container-nav-header-search">
-            <input type="text" />
-            <button>Buscar</button>
+            <input type="text" maxLength={70}/>
+            <button className="btn"><FaSearch /></button>
           </div>
         </div>
 
