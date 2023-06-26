@@ -66,12 +66,13 @@ input, textarea
   height: 35px
   border: none
   outline: none
-  border-radius: 2px
+  border-radius: variables.$bd-rd
   min-width: 100%
   padding: 2px 10px
   font-family: inherit
   font-size: 0.97rem
-  color: variables.$low-gray
+  color: variables.$medium-gray
+  border: 1px solid #e5e5e5
 
 input:focus
   outline: 2px solid orange
@@ -82,12 +83,14 @@ textarea
 .form-container
   display: flex
   flex-direction: column
+  background: variables.$white-color
+  box-shadow: variables.$shadows
   max-width: 500px
   justify-content: center
   align-self: center
   margin: 0 auto
   gap: 20px
-  border: 2px solid #e5e5e5
+  // border: 2px solid #e5e5e5
   padding: 40px 30px
   border-radius: 4px
 

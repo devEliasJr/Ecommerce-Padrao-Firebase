@@ -1,12 +1,11 @@
 //Hooks
 import { useAuthentication } from "../../hooks/useAuthentication";
-import { useAuthValue } from "../../context/AuthContext"
-
+import { useAuthValue } from "../../context/AuthContext";
 
 import { useEffect, useState } from "react";
 import { RiErrorWarningFill } from "react-icons/ri";
 
-import "./MyProfile.sass"
+import "./MyProfile.sass";
 
 const MyProfile = () => {
   const [displayName, setDisplayName] = useState("");
@@ -50,14 +49,19 @@ const MyProfile = () => {
     <div className="container">
       <h2 className="title-page">Painel do Usuario</h2>
       <p>Nesta pagina você pode alterar seus dados e/ou encerrar a secção</p>
-      <div className="contaier-img-name">
-        <img
-          src="https://fakeimg.pl/600x400?text=User+Image"
-          alt="Foto de perfil"
-        />
-        <span>Olá {user.displayName}, seja bem vindo(a)!</span>
-        <button onClick={logout} className="btn">Sair</button>
+      <div className="user">
+        <div className="form-container">
+          <img
+            src="https://fakeimg.pl/600x400?text=User+Image"
+            alt="Foto de perfil"
+          />
+          <span>Olá {user.displayName}, seja bem vindo(a)!</span>
+          <button onClick={logout} className="btn">
+            Sair
+          </button>
+        </div>
       </div>
+
       <form className="form-container" onSubmit={handleSubmit}>
         <span>Dados pessoais</span>
         <label className="label-form">
