@@ -82,7 +82,10 @@ const Navigation = () => {
               <ul className="container-nav-menus-item menu">
                 <li className="name">
                   <NavLink to="/my-profile">
-                    <FaUserAlt /> {`${user.displayName}`}
+                    <FaUserAlt /> 
+                    {user.displayName ?
+                    ` ${user.displayName}` : " Painel"
+                    }
                   </NavLink>
                 </li>
                 <li className="dash">
