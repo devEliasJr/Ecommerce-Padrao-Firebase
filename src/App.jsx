@@ -21,7 +21,6 @@ import Footer from "./componets/Footer";
 
 //Pages
 import ProductsCards from "./componets/products-Cards";
-import ProductDescription from "./pages/ProductDescription";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import About from "./pages/About/About";
@@ -32,6 +31,7 @@ import EditPost from "./pages/EditPost/EditPost";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import Contact from "./pages/Contact/Contact";
 import Search from "./pages/Search/Search";
+import Product from "./pages/Product/Product";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -77,8 +77,8 @@ function App() {
               element={user ? <MyProfile /> : <Navigate to="/login" />}
             />
             <Route
-              path="/product-description/:id/:name"
-              element={<ProductDescription />}
+              path="/product/:id"
+              element={<Product />}
             />
             <Route
               path="/product-register"
