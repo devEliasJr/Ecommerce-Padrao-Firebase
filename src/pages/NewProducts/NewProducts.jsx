@@ -1,25 +1,60 @@
 import { useState } from "react";
-import { usePost } from "../../hooks/usePost";
 import { useNavigate } from "react-router-dom";
 import { RiErrorWarningFill } from "react-icons/ri";
-
+import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useAuthValue } from "../../context/AuthContext";
 
 const NewProducts = () => {
   const [name, setName] = useState();
   const [price, setPrice] = useState();
+  const [image, setImage] = useState("");
   const [description, setDescription] = useState();
+  const [tags, setTags] = useState([]);
+  const [formError, setFormError] = useState("");
 
+  const { user } = useAuthValue();
 
-  const { createPost, loading, error } = usePost();
+  const { insertDocument, loading, error } = useInsertDocument("products");
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const product = { name, price, description };
-    createPost(product);
+    setFormError("");
+    console.log("ok");
+
+  
+    // validate image
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("A imagem precisa ser uma URL.");
+    }
+
+    // create tags array
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+    // check values
+    if (!name || !image || !tags || !description) {
+      setFormError("Por favor, preencha todos os campos!");
+    }
+
+    //Checar todos os valores
+    if (formError) return;
+
+    insertDocument({
+      name,
+      price,
+      image,
+      description,
+      tagsArray,
+      uid: user.uid,
+      createdBy: user.displayName,
+    });
     alert("Cadastrado com sucesso!");
-    navigate("/dashboard");
+
+    //redirect to home page
+    navigate("/");
   };
 
   return (
@@ -46,6 +81,24 @@ const NewProducts = () => {
             required
           />
         </label>
+        <label htmlFor="image" className="label-form">
+          <input
+            type="text"
+            name="image"
+            placeholder="Imagem"
+            onChange={(e) => setImage(e.target.value)}
+            required
+          />
+        </label>
+        <label htmlFor="tags" className="label-form">
+          <input
+            type="text"
+            name="tags"
+            placeholder="Tags..."
+            onChange={(e) => setTags(e.target.value)}
+            required
+          />
+        </label>
         <label htmlFor="description" className="label-form">
           <textarea
             type="text"
@@ -67,12 +120,13 @@ const NewProducts = () => {
             </button>
           )}
         </div>
-        {error && (
-          <div className="messages error">
-            <span className="error-icon">{<RiErrorWarningFill />}</span>
-            <span>{error}</span>
-          </div>
-        )}
+        {error ||
+          (formError && (
+            <div className="messages error">
+              <span className="error-icon">{<RiErrorWarningFill />}</span>
+              <span>{error || formError}</span>
+            </div>
+          ))}
       </form>
     </div>
   );
