@@ -23,7 +23,6 @@ const NewProducts = () => {
     setFormError("");
     console.log("ok");
 
-  
     // validate image
     try {
       new URL(image);
@@ -66,8 +65,9 @@ const NewProducts = () => {
           <input
             type="text"
             name="name"
-            placeholder="Qual produto deseja anunciar?"
+            placeholder="Qual produto deseja anunciar? Max.:40 caracteres."
             onChange={(e) => setName(e.target.value)}
+            maxLength={40}
             required
           />
         </label>
@@ -78,6 +78,7 @@ const NewProducts = () => {
             step="0.01"
             placeholder="Quanto irá custar? R$00,00"
             onChange={(e) => setPrice(e.target.value)}
+            maxLength={5}
             required
           />
         </label>
@@ -85,7 +86,7 @@ const NewProducts = () => {
           <input
             type="text"
             name="image"
-            placeholder="Imagem"
+            placeholder="Qual é o link da sua imagem?"
             onChange={(e) => setImage(e.target.value)}
             required
           />
@@ -94,7 +95,8 @@ const NewProducts = () => {
           <input
             type="text"
             name="tags"
-            placeholder="Tags..."
+            placeholder="Separe as tags por virgula Ok!. Ex.: boné, boné aba reta"
+            maxLength={60}
             onChange={(e) => setTags(e.target.value)}
             required
           />
@@ -103,8 +105,9 @@ const NewProducts = () => {
           <textarea
             type="text"
             name="description"
-            placeholder="Escreva uma breve descrição sobre o seu produto"
+            placeholder="Conte-nos mais sobre os detalhes do seu produto"
             onChange={(e) => setDescription(e.target.value)}
+            maxLength={300}
             required
           ></textarea>
         </label>
