@@ -10,7 +10,7 @@ export const useDelete = () => {
       alert('Deletado com sucesso')
       navigate("/dashboard")
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
