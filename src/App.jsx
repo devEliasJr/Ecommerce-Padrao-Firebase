@@ -31,6 +31,7 @@ import NewProducts from "./pages/NewProducts/NewProducts";
 import EditPost from "./pages/EditPost/EditPost";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import Contact from "./pages/Contact/Contact";
+import Search from "./pages/Search/Search";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -58,6 +59,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<Home />} />
+            <Route path="/Search" element={<Search />} />
             <Route
               path="/login"
               element={!user ? <Login /> : <Navigate to="/dashboard" />}

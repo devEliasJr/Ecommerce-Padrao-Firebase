@@ -8,14 +8,14 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 // Router Dom
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate } from "react-router-dom";
 
 // Style - CSS
 import "./Navigation.css";
 import "./Nav.css";
-
 
 //Hooks
 import { useEffect, useState } from "react";
@@ -23,9 +23,26 @@ import { useEffect, useState } from "react";
 import { useAuthentication } from "../hooks/useAuthentication";
 import { useAuthValue } from "../context/AuthContext";
 
+//Query
+
 const Navigation = () => {
   const [mobmenu, setmobMenu] = useState("");
   const { user } = useAuthValue();
+  const [query, setQuery] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (query) {
+      return navigate(`/search?q=${query}`);
+    }
+  };
+
+  useEffect(() => {
+    navigate(`/`);
+  }, [query]);
 
   return (
     <header>
@@ -36,10 +53,19 @@ const Navigation = () => {
               <FaCloudsmith /> Logo
             </NavLink>
           </div>
-          <div className="container-nav-header-search">
-            <input type="text" maxLength={70}/>
-            <button className="btn"><FaSearch /></button>
-          </div>
+          <form onSubmit={handleSubmit} className="container-nav-header-search">
+            <input
+              type="text"
+              maxLength={70}
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+            />
+            <button className="btn">
+              <FaSearch />
+            </button>
+          </form>
         </div>
 
         <nav className="container-nav-menus">
@@ -71,9 +97,7 @@ const Navigation = () => {
                   </NavLink>
                 </li>
                 <li className="reg">
-                  <NavLink to="/register">
-                    Cadastrar
-                  </NavLink>
+                  <NavLink to="/register">Cadastrar</NavLink>
                 </li>
               </ul>
             )}
@@ -82,10 +106,8 @@ const Navigation = () => {
               <ul className="container-nav-menus-item menu">
                 <li className="name">
                   <NavLink to="/my-profile">
-                    <FaUserAlt /> 
-                    {user.displayName ?
-                    ` ${user.displayName}` : " Painel"
-                    }
+                    <FaUserAlt />
+                    {user.displayName ? ` ${user.displayName}` : " Painel"}
                   </NavLink>
                 </li>
                 <li className="dash">
