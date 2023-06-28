@@ -8,8 +8,7 @@ import "../../../global_styles/global.sass";
 //Set url
 const url = "http://localhost:3000/products";
 
-//Custom Hook - GET Axios
-import { useGet } from "../../hooks/useGet";
+//Custom Hooks
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 //GET products in the database and create a cards to show them

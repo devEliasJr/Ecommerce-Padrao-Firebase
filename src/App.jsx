@@ -20,14 +20,12 @@ import Navigation from "./componets/Navigation";
 import Footer from "./componets/Footer";
 
 //Pages
-import ProductsCards from "./componets/products-Cards";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import NewProducts from "./pages/NewProducts/NewProducts";
-import EditPost from "./pages/EditPost/EditPost";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import Contact from "./pages/Contact/Contact";
 import Search from "./pages/Search/Search";

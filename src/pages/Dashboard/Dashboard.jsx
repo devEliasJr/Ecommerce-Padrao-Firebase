@@ -1,15 +1,12 @@
 //Hooks
 import { Link } from "react-router-dom";
-
-import { useGet } from "../../hooks/useGet";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 // import { useDelete } from "../../hooks/useDelete";
 import { useDeleteDocument } from "../../hooks/useDeleteDocument";
 
+//Styles
 import "./Dashboard.sass";
-
-import { FaWindowClose, FaUserEdit } from "react-icons/fa";
 
 //context
 import { useAuthValue } from "../../context/AuthContext";

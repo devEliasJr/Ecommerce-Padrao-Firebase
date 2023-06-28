@@ -2,12 +2,8 @@
 import {
   FaCloudsmith,
   FaUserAlt,
-  FaWindowClose,
-  FaPlusCircle,
-  FaPlusSquare,
   FaSearch,
 } from "react-icons/fa";
-import { AiOutlineMenu } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
 // Router Dom
@@ -26,7 +22,6 @@ import { useAuthValue } from "../context/AuthContext";
 //Query
 
 const Navigation = () => {
-  const [mobmenu, setmobMenu] = useState("");
   const { user } = useAuthValue();
   const [query, setQuery] = useState("");
 
