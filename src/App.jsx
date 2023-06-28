@@ -32,6 +32,7 @@ import MyProfile from "./pages/MyProfile/MyProfile";
 import Contact from "./pages/Contact/Contact";
 import Search from "./pages/Search/Search";
 import Product from "./pages/Product/Product";
+import EditProduct from "./pages/EditProduct/EditProduct";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -86,7 +87,7 @@ function App() {
             />
             <Route
               path="/product-edit/:id"
-              element={user ? <EditPost /> : <Navigate to="/login" />}
+              element={user ? <EditProduct /> : <Navigate to="/login" />}
             />
           </Routes>
           <Footer />

@@ -59,8 +59,19 @@ const NewProducts = () => {
   return (
     <div className="container">
       <h1 className="title-page">Cadastre um novo produto</h1>
-
       <form onSubmit={handleSubmit} className="form-container">
+        {image.length > 8 && (
+          <p
+            style={{
+              display: "Flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            Preview da imagem atual:
+            <img width={"250px"} src={image} alt={name} />
+          </p>
+        )}
         <label htmlFor="name" className="label-form">
           <input
             type="text"
@@ -88,6 +99,7 @@ const NewProducts = () => {
             name="image"
             placeholder="Qual é o link da sua imagem?"
             onChange={(e) => setImage(e.target.value)}
+            value={image || ""}
             required
           />
         </label>
