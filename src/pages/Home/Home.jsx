@@ -11,6 +11,9 @@ const url = "http://localhost:3000/products";
 //Custom Hooks
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
+//Components
+import Carrousel from "../../componets/Carrousel"
+
 //GET products in the database and create a cards to show them
 export default function Home() {
   //Variables API - Fetch Axios
@@ -19,6 +22,7 @@ export default function Home() {
 
   return (
     <div className="container">
+      <Carrousel />
       {loading && <p>Carregando...</p>}
       {!error && items && items.length > 0 ? (
         <div className="container-product-main">

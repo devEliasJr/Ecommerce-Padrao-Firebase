@@ -31,6 +31,7 @@ import Contact from "./pages/Contact/Contact";
 import Search from "./pages/Search/Search";
 import Product from "./pages/Product/Product";
 import EditProduct from "./pages/EditProduct/EditProduct";
+import Carrousel from "./componets/Carrousel";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -57,7 +58,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/Search" element={<Search />} />
             <Route
               path="/login"
