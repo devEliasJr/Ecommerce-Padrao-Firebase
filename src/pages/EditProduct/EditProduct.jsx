@@ -59,9 +59,14 @@ const EditProduct = () => {
     //Checar todos os valores
     if (formError) return;
 
+    const convertedPriceToBr = parseFloat(price)
+    .toFixed(2)
+    .toString()
+    .replace(".", ",");
+
     const data = {
       name,
-      price,
+      price: convertedPriceToBr,
       image,
       description,
       tagsArray,
