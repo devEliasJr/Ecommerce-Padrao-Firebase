@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 backup
-firebase
+# firebase
 bckp
 
 # Editor directories and files

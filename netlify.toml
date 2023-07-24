@@ -1,0 +1,5 @@
+# Rewrite a path
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 403
