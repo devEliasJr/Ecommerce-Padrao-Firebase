@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiFetch = axios.create({
-  baseURL: "http://localhost:3000/products",
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     "Content-Type": "application/json",
   },

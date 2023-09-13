@@ -1,18 +1,19 @@
 @use '../../../global_styles/variables'
 
 .container-product-main
-  width: 990px
-  margin: 50px auto
+  width: 100%
+  max-width: 1380px
   display: grid
-  grid-template-columns: repeat(5, 190px)
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr))
   gap: 16px 10px
   background-color: #f2f2f2
   font-family: "Roboto", Arial, Helvetica, sans-serif
   box-sizing: border-box
+  padding: 20px
+  margin: 0 auto
 
 .container-product-card
-  gap: 5px
-  width: 190px
+  width: 100%
   height: 280px
   background-color: #ffffff
   border-radius: 8px
@@ -29,16 +30,15 @@
     cursor: pointer
 
 .container-product-img
+  position: relative
   overflow: hidden
-  border-top-radius: 4px
-  width: 190px
-  height: 190px
+  width: 100%
+  height: 70%
 
   & img
-    max-width: 100%
+    width: 100%
     height: 100%
-    background-size: 100%
-    background-position: center
+    object-fit: cover
 
 .container-body
   display: flex
@@ -63,20 +63,23 @@
     width: fit-content
 
 @media (max-width: 800px)
-  .container-product-main
-    grid-template-columns: repeat(3, 200px)
-
   .container-product-card
     width: 200px
-    height: 350px
+    height: 280px
 
 @media (max-width: 630px)
-  .container-product-main
-    grid-template-columns: repeat(2, 240px)
-
   .container-product-card
     width: 240px
-    height: 350px
+    height: 280px
+
+@media (max-width: 500px)
+  .container-product-main
+    grid-template-columns: repeat(1, 280px)
+    gap: 30px 16px
+
+  .container-product-card
+    width: 280px
+    height: 280px
 
 @media (max-width: 500px)
   .container-product-main

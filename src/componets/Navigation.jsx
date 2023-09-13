@@ -1,9 +1,5 @@
 //React Icons
-import {
-  FaCloudsmith,
-  FaUserAlt,
-  FaSearch,
-} from "react-icons/fa";
+import { FaCloudsmith, FaUserAlt, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 // Router Dom
@@ -45,7 +41,7 @@ const Navigation = () => {
         <div className="container-nav-logo-search">
           <div className="container-nav-header-logo">
             <NavLink to="/">
-              <FaCloudsmith /> Logo
+              <FaCloudsmith /> Fácil Commerce
             </NavLink>
           </div>
           <form onSubmit={handleSubmit} className="container-nav-header-search">
@@ -64,25 +60,7 @@ const Navigation = () => {
         </div>
 
         <nav className="container-nav-menus">
-          <div className="container-nav-menus sub">
-            <ul className="container-nav-menus-item menu">
-              <li className="container-nav-menus-item">
-                <NavLink className="nav-link" to="/">
-                  Home
-                </NavLink>
-              </li>
-              <li className="container-nav-menus-item">
-                <NavLink className="nav-link" to="/about">
-                  About
-                </NavLink>
-              </li>
-              <li className="container-nav-menus-item">
-                <NavLink className="nav-link" to="/contact">
-                  Contact
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+          <div className="container-nav-menus sub"></div>
           <div className="container-nav-menus login">
             {!user && (
               <ul className="container-nav-menus-item menu">

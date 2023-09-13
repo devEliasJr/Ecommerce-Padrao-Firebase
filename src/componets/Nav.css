@@ -6,19 +6,19 @@
 
 .container-nav-logo-search {
   display: flex;
-  justify-content: center;
+  gap: 20px;
+  justify-content: space-between;
   align-items: center;
-}
-
-.container-nav-header-logo {
-  width: 20%;
+  overflow: hidden;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .container-nav-header-logo a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .container-nav-header-search {
@@ -26,19 +26,7 @@
   flex: 1;
   align-items: center;
   position: relative;
-  max-width: 650px;
-  margin-right: 10px;
 }
-
-/* Moved to global CSS */
-/* .container-nav-header-search input {
-  display: block;
-  height: 35px;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  width: 100%;
-} */
 
 .container-nav-header-search button {
   display: block;
@@ -47,13 +35,12 @@
   width: 60px;
   border-radius: 4px;
   border: none;
-  /* background: orange; */
   position: absolute;
   right: 5px;
   cursor: pointer;
   padding-top: 2px;
   position: absolute;
-  right: 0px;
+  right: 3%;
 }
 
 .container-nav-menus {
@@ -96,27 +83,34 @@
 }
 
 @media (max-width: 580px) {
-    .container-nav-logo-search {
-        flex-direction: column;
-    }
-    .container-nav-header-search input {
-        width: 90vw;
-    }
-    .container-nav-header-logo {
-        margin-bottom: 5%;
-    }
+  .container-nav-logo-search {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  }
+  .container-nav-header-search input {
+    width: 90vw;
+  }
+  .container-nav-header-search button {
+    right: 10%;
+  }
+  .container-nav-header-logo {
+    margin-bottom: 5%;
+  }
 
-    .container-nav-menus-item .dash {
-        display: none;
-    }
+  .container-nav-menus-item .dash {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
-   
-    .container-nav-menus-item .reg {
-        display: none;
-    }
-    .container-nav-menus-item .new {
-        display: none;
-    }
+  .container-nav-menus-item .reg {
+    display: none;
+  }
+  .container-nav-menus-item .new {
+    display: none;
+  }
+  .container-nav-header-search button {
+    right: 15%;
+  }
 }
