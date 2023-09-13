@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBIxLUI-eInG1NurUybm_A7kcQV8eD3BpQ",
+  apiKey: import.meta.env.VITE_API_FIREBASE_KEY,
   authDomain: "ecommerce-b50db.firebaseapp.com",
   projectId: "ecommerce-b50db",
   storageBucket: "ecommerce-b50db.appspot.com",
